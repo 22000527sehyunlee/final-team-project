@@ -6,7 +6,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
-
+<beans:bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+<beans:property name="driverClassName" value="com.mysql.jdbc.Driver"></beans:property>
+<beans:property name="url" value="jdbc:mysql://walab.handong.edu/PP1_22000534"></beans:property>
+<beans:property name="username" value="PP1_22000534"></beans:property>
+<beans:property name="password" value="Aipai6AP"></beans:property>
+</beans:bean>
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
