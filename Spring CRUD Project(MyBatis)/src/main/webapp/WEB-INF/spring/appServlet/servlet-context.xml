@@ -12,6 +12,7 @@
 <beans:property name="username" value="PP1_22000534"></beans:property>
 <beans:property name="password" value="Aipai6AP"></beans:property>
 </beans:bean>
+
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
