@@ -25,13 +25,11 @@ public class BoardServiceImple implements BoardService {
 	}
 	@Override
 	public int deleteBoard(int no) {
-		// TODO Auto-generated method stub
-		return 0;
+		return boardDAO.deleteBoard(no);
 	}
 	@Override
 	public int updateBoard(BoardVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
+		return boardDAO.updateBoard(vo);
 	}
 	
 

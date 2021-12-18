@@ -6,11 +6,11 @@
 		(#{category} , #{title} , #{writer} , #{content}, #{regdate}, 0 , #{filename})</insert>
 	<update id="updateBoard">
 		update board
-		set title=#{title}, content=#{content}, writer=#{writer}, category=#{category}
-		where seq=#{seq}
+		set title=#{title}, content=#{content}
+		where no=#{no}
 	</update>
 		<delete id="deleteBoard">
-		delete from BOARD where no=#{no}
+		delete from board where no=#{no}
 	</delete>
 	<select id="getBoard" resultType="board">
 		select * from board where no=#{no}

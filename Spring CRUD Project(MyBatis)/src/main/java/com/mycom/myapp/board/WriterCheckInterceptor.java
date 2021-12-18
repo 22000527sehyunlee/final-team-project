@@ -4,21 +4,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
-public class LoginCheckInterceptor extends HandlerInterceptorAdapter{
+public class WriterCheckInterceptor extends HandlerInterceptorAdapter {
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+		System.out.println(request.getPathInfo());
+		System.out.println(request.getPathTranslated());
+		System.out.println(request.getContextPath());
+		System.out.println(request.getServletPath());
 		HttpSession session = request.getSession();
 		Object obj = session.getAttribute("login");
-		if (obj == null) {
-			System.out.println("로그인 하셔야죠!");
-			response.sendRedirect(request.getContextPath() + "/login/");
-			return false;
-		}
-		System.out.println("로그인 하셨군요!");
+		
 		return true;
 	}
 }

@@ -28,14 +28,15 @@
 }
 </style>
 <script>
-	function delete_ok(id){
+	function delete_ok(id, writer){
 		var a = confirm("정말로 삭제하겠습니까?");
-		if(a) location.href='deleteok/'+id;
+		if(a) location.href='deleteok/'+id+'/'+writer;
 	}
 </script>
 </head>
 <body>
 <h1>자유게시판</h1>
+<h2 ><a href="/myapp/login/">로그인 하러가기</a></h2>
 <table id="list" width="90%">
 <tr>
 	<th>Id</th>
@@ -53,8 +54,8 @@
 		<td>${u.getWriter()}</td>
 		<td>${u.getCategory()}</td>
 		<td>${u.getRegdate()}</td>
-		<td><a href="editpost/${u.getNo()}">글수정</a></td>
-		<td><a href="javascript:delete_ok('${u.getNo()}')">글삭제</a></td>
+		<td><a href="editpost/${u.getNo()}/${u.getWriter()}">글수정</a></td>
+		<td><a href="javascript:delete_ok('${u.getNo()}','${u.getWriter()}')">글삭제</a></td>
 	</tr>
 </c:forEach>
 </table>
